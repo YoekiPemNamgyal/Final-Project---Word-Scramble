@@ -37,7 +37,7 @@
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnScore = new System.Windows.Forms.Button();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -123,16 +123,16 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnExit
+            // btnScore
             // 
-            this.btnExit.Font = new System.Drawing.Font("Niagara Solid", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(680, 374);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(95, 55);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnScore.Font = new System.Drawing.Font("Niagara Solid", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScore.Location = new System.Drawing.Point(680, 374);
+            this.btnScore.Name = "btnScore";
+            this.btnScore.Size = new System.Drawing.Size(95, 55);
+            this.btnScore.TabIndex = 8;
+            this.btnScore.Text = "SCORE";
+            this.btnScore.UseVisualStyleBackColor = true;
+            this.btnScore.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // gameTimer
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SaddleBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnScore);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtAnswer);
@@ -172,7 +172,7 @@
         private System.Windows.Forms.TextBox txtAnswer;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnScore;
         private System.Windows.Forms.Timer gameTimer;
     }
 }

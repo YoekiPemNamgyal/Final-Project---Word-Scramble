@@ -17,7 +17,7 @@ namespace Final_Project___Word_Scramble
         List<string> remainingWords = new List<string>
         { "KNOWLEDGE", "ADVENTURE", "MYSTERIOUS" };
         List<string> remainingHints = new List<string>
-        { "Something you gain by studying", "An exciting experience", "Hard to understand or explane" };
+        { "HINT:Something you gain by studying", "HINT:An exciting experience", "HINT:Hard to understand or explane" };
 
         int currenIndex;
         int score = 0;
@@ -43,17 +43,31 @@ namespace Final_Project___Word_Scramble
         //Load a new word for the game 
         void LoadNewWord()
         {
-            if(questionCount>=maxQuestions || remainingWords.Count == 0) 
+            if (questionCount >= maxQuestions || remainingWords.Count == 0)
             {
                 lblMessage.Text = "Game Over! Final Score : " + score;
-
-            currenIndex = rand.Next(words.Length);//OK
-            lblScrambledWord.Text= ScrambleWord(words[currenIndex]);
-            lblHint.Text = hints[currenIndex];
-            txtAnswer.Text = "";
+                gameTimer.Stop();
+                txtAnswer.Enabled = false;
+                btnCheck.Enabled = false;
+                btnRefresh.Enabled = false;
+                lblScrambledWord.Text = "";
+                lblHint.Text = "";
+                lblTimer.Text = "";
+                return;
+            }
+            
+            //Scramble the word
+            int index = rand.Next(remainingWords.Count);
+            lblScrambledWord.Text = ScrambleWord(remainingWords[index]);
+            lblHint.Text = "";
             lblMessage.Text = "";
             timeleft = 30;
-            lblTimer.Text = "Time Left : " + timeleft;
+            timeleft = 30;
+            lblTimer.Text = "Time left" + timeleft;
+
+            //
+            remainingWords.Add
+            remainingWords.Add
         }
 
         public frmGame()
@@ -66,8 +80,6 @@ namespace Final_Project___Word_Scramble
             LoadNewWord();
             gameTimer.Start();//Timer Interval should be 1000ms
         }
-
-
 
         private void lblHint_Click(object sender, EventArgs e)
         {
@@ -108,7 +120,9 @@ namespace Final_Project___Word_Scramble
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FinalForm final = new FinalForm();
+            final.Show();
+            this.Hide();
         }
     }
 }
